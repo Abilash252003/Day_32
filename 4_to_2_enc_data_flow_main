@@ -1,0 +1,16 @@
+///100 days of RTL///
+
+///Abilash P///
+
+///4:2 encoder in data flow modeling///
+
+module enc_4_to_2 (A,Y);
+
+input  [3:0]A;
+output [1:0]Y;
+
+assign Y[1] = ~A[1] & ~A[0] & (A[3] ^ A[2]);
+assign Y[0] = ~A[2] & ~A[0] & (A[3] ^ A[1]);
+
+endmodule
+ 
