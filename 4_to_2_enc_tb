@@ -1,0 +1,33 @@
+///100 days of RTL///
+
+///Abilash P///
+
+///4:2 encoder test bench///
+
+module enc_4_to_2_tb ();
+
+reg  [3:0]A;
+wire [1:0]Y;
+
+enc_4_to_2 E1 (.A(A), .Y(Y));
+
+initial
+begin
+   A=1;
+   $display("The value of A3 = %b, A2 = %b, A1 = %b, A0 = %b",A[3], A[2], A[1], A[0]);
+    #20;
+   A=2;
+   $display("The value of A3 = %b, A2 = %b, A1 = %b, A0 = %b",A[3], A[2], A[1], A[0]);
+    #20;
+   A=4;
+   $display("The value of A3 = %b, A2 = %b, A1 = %b, A0 = %b",A[3], A[2], A[1], A[0]);
+    #20;
+   A=8;
+   $display("The value of A3 = %b, A2 = %b, A1 = %b, A0 = %b",A[3], A[2], A[1], A[0]);
+    #20; 
+end
+
+initial
+  $monitor ("The Output Y1 = %b, Y0 = %b",Y[1], Y[0]);
+
+endmodule
